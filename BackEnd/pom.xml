@@ -1,0 +1,139 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!-- POM模型版本 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 项目组ID、项目ID、打包方式、版本号、名称、URL -->
+    <groupId>org.example</groupId>
+    <artifactId>BackEnd</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>BackEnd Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <!-- 子模块定义 -->
+    <modules>
+        <module>framework</module>
+        <module>admin</module>
+        <module>blog</module>
+    </modules>
+
+    <!-- 版本属性 -->
+    <properties>
+        <spring-boot-dependencies.version>2.7.15</spring-boot-dependencies.version> <!-- Spring Boot 版本 -->
+        <junit.version>4.12</junit.version> <!-- JUnit 版本 -->
+        <mybatis-plus.version>3.4.3</mybatis-plus.version> <!-- MyBatis Plus 版本 -->
+        <mysql.version>8.0.30</mysql.version> <!-- MySQL 版本 -->
+        <lombok.version>1.18.28</lombok.version> <!-- Lombok 版本 -->
+        <druid.version>1.2.8</druid.version> <!-- Druid 版本 -->
+        <fastjson.version>1.2.78</fastjson.version> <!-- FastJSON 版本 -->
+        <easyexcel.version>3.0.5</easyexcel.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>   <!-- 编码 -->
+        <!-- 指定jdk版本   -->
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <jwt.version>0.9.0</jwt.version>
+    </properties>
+
+
+    <!--  版本控制-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot的依赖配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- MyBatis Plus Starter：用于简化 MyBatis 的使用 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- MySQL 连接驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- 引入 Lombok：简化 Java 开发中的代码 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- Druid 数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- FastJSON：用于快速处理 JSON 数据 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--jwt依赖-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+
+            <!-- swagger-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+
+            <!--七牛云OOS-->
+            <dependency>
+                <groupId>com.qiniu</groupId>
+                <artifactId>qiniu-java-sdk</artifactId>
+                <version>[7.7.0, 7.7.99]</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.9.1</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

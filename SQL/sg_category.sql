@@ -1,0 +1,7 @@
+INSERT INTO `sg_category`(`id`, `name`, `pid`, `description`, `status`, `create_by`, `create_time`, `update_by`, `update_time`, `del_flag`) VALUES (1, 'java', -1, 'wsd', '0', NULL, NULL, NULL, NULL, 0);
+INSERT INTO `sg_category`(`id`, `name`, `pid`, `description`, `status`, `create_by`, `create_time`, `update_by`, `update_time`, `del_flag`) VALUES (2, 'PHP', -1, 'wsd', '0', NULL, NULL, NULL, NULL, 0);
+INSERT INTO `sg_category`(`id`, `name`, `pid`, `description`, `status`, `create_by`, `create_time`, `update_by`, `update_time`, `del_flag`) VALUES (15, 'Python', -1, 'Python', '0', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `sg_category`(`id`, `name`, `pid`, `description`, `status`, `create_by`, `create_time`, `update_by`, `update_time`, `del_flag`) VALUES (16, 'Python', -1, 'Python', '0', NULL, NULL, NULL, NULL, 0);
+INSERT INTO `sg_category`(`id`, `name`, `pid`, `description`, `status`, `create_by`, `create_time`, `update_by`, `update_time`, `del_flag`) VALUES (17, '测试', -1, NULL, '0', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `sg_category`(`id`, `name`, `pid`, `description`, `status`, `create_by`, `create_time`, `update_by`, `update_time`, `del_flag`) VALUES (18, '警用', -1, NULL, '0', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `sg_category`(`id`, `name`, `pid`, `description`, `status`, `create_by`, `create_time`, `update_by`, `update_time`, `del_flag`) VALUES (19, '禁用', -1, NULL, '1', NULL, NULL, NULL, NULL, 1);

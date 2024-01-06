@@ -1,0 +1,31 @@
+package com.example.framework.domain.exception;
+
+import com.example.framework.domain.enums.AppHttpCodeEnum;
+
+/**
+ * @Description:统一异常处理
+ * @Author:Rainbow
+ * @CreateTime:2023/12/1916:36
+ */
+public class SystemException extends RuntimeException {
+
+    private int code;
+
+    private String msg;
+
+    //定义一个构造方法，接收的参数是枚举类型，AppHttpCodeEnum是我们在huanf-framework工程定义的枚举类
+    public SystemException(AppHttpCodeEnum httpCodeEnum) {
+        super(httpCodeEnum.getMsg());
+        //把某个枚举类里面的code和msg赋值给异常对象
+        this.code = httpCodeEnum.getCode();
+        this.msg = httpCodeEnum.getMsg();
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+}
